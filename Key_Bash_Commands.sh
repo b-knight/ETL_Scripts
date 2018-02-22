@@ -43,6 +43,7 @@ find . -name "*.csv" -type f -delete
 
 # ------------------------------------------------------------------
 # List all lines of a file that contain some string "x"
+
 grep "x" filename.csv
 
 # ------------------------------------------------------------------
@@ -55,5 +56,8 @@ find -type f -name '*.out' | while read f; do mv "$f" "${f%.out}"; done;
 
 for i in *.csv; do sed s/\"//g $i > $i.out; done;
 
+# ------------------------------------------------------------------
+# Create a new file (b) from a subset of rows from file (a) based 
+# on row number (in this case, rows [0,10].
 
-
+sed -n 0, 10p parent_file.txt > chile_file.txt
