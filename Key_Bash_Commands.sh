@@ -58,6 +58,6 @@ for i in *.csv; do sed s/\"//g $i > $i.out; done;
 
 # ------------------------------------------------------------------
 # Create a new file (b) from a subset of rows from file (a) based 
-# on row number (in this case, rows [0,10].
+# on row number (in this case, rows [1,10].
 
-sed -n 0, 10p parent_file.txt > chile_file.txt
+tail -n +1 original_file.txt | head -n 10 - > output_file.txt
