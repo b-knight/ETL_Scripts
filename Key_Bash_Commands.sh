@@ -61,3 +61,9 @@ for i in *.csv; do sed s/\"//g $i > $i.out; done;
 # on row number (in this case, rows [1,10].
 
 tail -n +1 original_file.txt | head -n 10 - > output_file.txt
+
+
+# ------------------------------------------------------------------
+# Create a new file (b) consisting of the unique rows of file (a).
+
+sort -u file > new_file
